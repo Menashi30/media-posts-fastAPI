@@ -1,10 +1,10 @@
 [Unit]
-Description=demo fastapi application
+Description=gunicorn instance to server API
 After=network.target
 
 [Service]
 User=menashi
-Group=menshi
+Group=menashi
 WorkingDirectory=/home/menashi/app/src/
 Environment="PATH=/home/menashi/app/venv/bin"
 EnvironmentFile=/home/menashi/.env
