@@ -40,7 +40,7 @@ def test():
 
 @app.get("/")
 def read_root():
- return {"message":"Hello World FastAPI!"}
+ return {"message":"Hello World FastAPI after deployment!!!"}
 
 @app.get("/sqlalchemy")
 def test_post(db : Session = Depends(get_db)) :
