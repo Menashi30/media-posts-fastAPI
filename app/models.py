@@ -12,7 +12,7 @@ class Posts(Base) :
     created_at = Column(TIMESTAMP(timezone = 'True'), server_default = text('now()'),nullable = False)
 
     owner_id = Column(Integer, ForeignKey("Users.id",ondelete="CASCADE"),nullable=False)
-    phone_number = Column(Integer,nullable=False)
+    phone_number = Column(Integer,nullable=True)
     #add reference to another class Users with the foreign key relationship to another table
     owner = relationship("Users")
 

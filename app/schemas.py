@@ -9,7 +9,7 @@ class PostBase (BaseModel) :
   content: str
   published: bool = True
   #rating: Optional[int] = None
-  phone_number: int
+  # phone_number: Optional[int]
 
 class PostCreate (PostBase) :
   #same key-value as such the PostBase class

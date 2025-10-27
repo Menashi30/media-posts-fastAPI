@@ -9,10 +9,9 @@ from .config import settings
 
 #SQLALCHEMEY_DATABASE_URL =  "postgresql://postgres:postgres@localhost/fastapi"
 
-SQLALCHEMEY_DATABASE_URL =  f'postgresql://{settings.
-database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}'
+SQLALCHEMY_DATABASE_URL = f'postgresql+psycopg2://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
-engine = create_engine(SQLALCHEMEY_DATABASE_URL)
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # we want to make use of a session when we actaully want to talk to the database
 
