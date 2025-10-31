@@ -17,12 +17,12 @@ jobs:
     ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
    services:
     postgres:
-      images: postgres
+      image: postgres
       env:
        POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
        POSTGRES_NAME:  ${{secrets.DATABASE_NAME}}_test
       ports:
-       5432:5432
+       - 5432:5432
       options: >-
         --health-cmd pg_isready
         --health-interval 10s
