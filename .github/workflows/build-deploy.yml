@@ -71,4 +71,4 @@ jobs:
    runs-on: ubuntu-latest
    steps:
       - name: deploying some stuff
-        runs: echo "going to deploy some stuff"
+        uses: echo "going to deploy some stuff"
