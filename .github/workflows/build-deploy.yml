@@ -3,7 +3,7 @@ name: Build and Deploy Code
 on: [push, pull_request]
 
 jobs:
-  job1:
+  build:
    environment:
     name: testing
    env:
@@ -65,3 +65,10 @@ jobs:
 #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
 #     cache-from: type=local,src=/tmp/.buildx-cache
 #     cache-to: type=local,dest=/tmp/.buildx-cache
+
+  deploy:
+   needs: [build]
+   runs-on: ubuntu-latest
+   steps:
+      - name: deploying some stuff
+        runs: echo "going to deploy some stuff"
