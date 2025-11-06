@@ -40,7 +40,7 @@ def test():
 
 @app.get("/")
 def read_root():
- return {"message":"Hello World!"}
+ return {"message":"Hello World afte CI/CD deployment!"}
 
 @app.get("/sqlalchemy")
 def test_post(db : Session = Depends(get_db)) :
