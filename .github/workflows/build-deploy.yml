@@ -82,7 +82,7 @@ jobs:
           api_key: ${{ secrets.RENDER_API_KEY }}
           wait_deploy: true # Optional: Wait for deployment status
       - name: Deploy to ubunutu server
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{secrets.PROD_USERNAME}}
