@@ -85,8 +85,8 @@ jobs:
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{secrets.PROD_HOST}}
-          username: root
-          password: digital25Ocean
+          username: ${{secrets.PROD_HOST}}
+          password: ${{secrets.PROD_USERNAME}}
           script: whoami
           # script: |
           #  cd app/src
