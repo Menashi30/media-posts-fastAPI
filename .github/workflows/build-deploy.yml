@@ -81,13 +81,13 @@ jobs:
           service_id: ${{ secrets.RENDER_SERVICE_ID }}
           api_key: ${{ secrets.RENDER_API_KEY }}
           wait_deploy: true # Optional: Wait for deployment status
-      # - name: Deploy to ubunutu server
-      #   uses: appleboy/ssh-action@v1
-      #   with:
-      #     host: ${{secrets.PROD_HOST}}
-      #     username: ${{secrets.PROD_USERNAME}}
-      #     password: ${{secrets.PROD_PASSWORD}}
-      #     script: whoami
+      - name: Deploy to ubunutu server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{secrets.PROD_HOST}}
+          username: root
+          password: digital25Ocean
+          script: whoami
           # script: |
           #  cd app/src
           #  git pull
