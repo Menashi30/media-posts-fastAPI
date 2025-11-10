@@ -91,4 +91,4 @@ jobs:
           script: |
            cd app/src
            git pull
-           echo ${{ secrets.PROD_PASSWORD }} | sudo  -S systemctl restart api
+           echo  digital25Ocean| sudo  -S systemctl restart api
