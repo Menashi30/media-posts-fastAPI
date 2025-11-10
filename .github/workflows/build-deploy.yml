@@ -85,9 +85,10 @@ jobs:
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{secrets.PROD_HOST}}
-          username: menashi
-          password: menashi
+          username: ${{secrets.PROD_USER_NAME}}
+          password: ${{secrets.PROD_PASS}}
+          # script: whoami
           script: |
            cd app/src
            git pull
-           echo  menashi| sudo  -S systemctl restart api
+           echo ${{secrets.PROD_PASS}} | sudo  -S systemctl restart api
