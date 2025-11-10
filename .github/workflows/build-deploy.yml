@@ -86,9 +86,9 @@ jobs:
         with:
           host: ${{secrets.PROD_HOST}}
           username: ${{secrets.PROD_HOST}}
-          password: ${{secrets.PROD_USERNAME}}
-          script: whoami
-          # script: |
-          #  cd app/src
-          #  git pull
-          #  echo ${{ secrets.PROD_PASSWORD }} | sudo  -S systemctl restart api
+          password: digital25Ocean
+          # script: whoami
+          script: |
+           cd app/src
+           git pull
+           echo ${{ secrets.PROD_PASSWORD }} | sudo  -S systemctl restart api
